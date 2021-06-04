@@ -72,7 +72,7 @@ PN_type = 'Pure';
 
 # ProNav & Engagement Params
 aT = 0;                 #Target Acceleration
-HE_rad = -20*np.pi/180; #20 deg heading error
+HE_rad = -40*np.pi/180; #40 deg heading error
 Np = 3;                 #ProNav Gain
 tf = 22;                #Simulation time
 h = 1e-2;               #0.01s timestep
@@ -154,14 +154,14 @@ VT2 = 6;
 VM1 = 7;
 VM2 = 8;
 
-# Plot range (XZ)
+# Plot range(Z) x time
 plt.figure(1)
-plt.title("XZ Range")
-plt.plot(y[RT1],y[RT2])
-plt.plot(y[RM1],y[RM2])
+plt.title("Z Range(ft) x Time(s)")
+plt.plot(t,y[RT2])
+plt.plot(t,y[RM2])
 
 # Plot range x time
 plt.figure(2)
-plt.title("Range x Time ")
+plt.title("Range(ft) x Time(s) ")
 plt.plot(t,np.sqrt(np.power(y[RT1]-y[RM1],2)+np.power(y[RT2]-y[RM2],2)))
 plt.show()
